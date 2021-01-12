@@ -5,3 +5,12 @@ stages:
     - data/raw/alexa_1M.zip
     outs:
     - data/extract-alexa/
+  prepare-alexa:
+    cmd: python src/preparation/alexa_prepare.py data/extract-alexa/alexa_1M.csv data/prepare-alexa/
+    deps:
+    - data/extract-alexa/alexa_1M.csv
+    - src/preparation/alexa_prepare.py
+    params:
+    - preparation.seed
+    outs:
+    - data/prepare-alexa/

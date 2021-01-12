@@ -9,3 +9,20 @@ extract-alexa:
     md5: e12e0e03430e729268f8a075f0287aae.dir
     size: 22991158
     nfiles: 1
+prepare-alexa:
+  cmd: python src/preparation/alexa_prepare.py data/extract-alexa/alexa_1M.csv data/prepare-alexa/
+  deps:
+  - path: data/extract-alexa/alexa_1M.csv
+    md5: 135bcc36298ce986a3b0cc5d21ee430b
+    size: 22991158
+  - path: src/preparation/alexa_prepare.py
+    md5: 76e0da76accdf76601205a4bfb3762d6
+    size: 1700
+  params:
+    params.yaml:
+      preparation.seed: 0
+  outs:
+  - path: data/prepare-alexa/
+    md5: a300a7f00d99549d84ebb855f13a8a4c.dir
+    size: 23269201
+    nfiles: 1

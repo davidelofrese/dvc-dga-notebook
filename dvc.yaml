@@ -36,3 +36,11 @@ stages:
     - src/preparation/train_test_split.py
     outs:
     - data/split-alexa/
+  split-dga:
+    cmd: python src/preparation/train_test_split.py data/prepare-dga/dga_prepared.pkl
+      dga data/split-dga/
+    deps:
+    - data/prepare-dga/dga_prepared.pkl
+    - src/preparation/train_test_split.py
+    outs:
+    - data/split-dga/

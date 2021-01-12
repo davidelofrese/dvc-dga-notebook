@@ -69,3 +69,18 @@ split-alexa:
     md5: f641d20db7b2fc1e607ce1a4f9d641c7.dir
     size: 23269987
     nfiles: 2
+split-dga:
+  cmd: python src/preparation/train_test_split.py data/prepare-dga/dga_prepared.pkl
+    dga data/split-dga/
+  deps:
+  - path: data/prepare-dga/dga_prepared.pkl
+    md5: 8c7a661ac83ec5b58abdb2b0bc5a678a
+    size: 81123
+  - path: src/preparation/train_test_split.py
+    md5: f5d11d7d36097c8d648caa363b9531cc
+    size: 1029
+  outs:
+  - path: data/split-dga/
+    md5: 12dc4771883829929b9e1ca6b5e405f4.dir
+    size: 82020
+    nfiles: 2

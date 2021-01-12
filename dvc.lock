@@ -40,3 +40,17 @@ prepare-dga:
     md5: e5d233c5cbe290b03d5ea4176e589751.dir
     size: 81123
     nfiles: 1
+prepare-words:
+  cmd: python src/preparation/words_prepare.py data/raw/words.txt data/prepare-words/
+  deps:
+  - path: data/raw/words.txt
+    md5: bc663cb75feb6b860131c12db7fbe825
+    size: 4950996
+  - path: src/preparation/words_prepare.py
+    md5: 759cc0a5d617bbc8c259a8f5fa27ddee
+    size: 1029
+  outs:
+  - path: data/prepare-words/
+    md5: b305b5b29a37211d771f49d183b000d6.dir
+    size: 8399364
+    nfiles: 1

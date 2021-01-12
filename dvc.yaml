@@ -21,3 +21,10 @@ stages:
     - src/preparation/dga_prepare.py
     outs:
     - data/prepare-dga/
+  prepare-words:
+    cmd: python src/preparation/words_prepare.py data/raw/words.txt data/prepare-words/
+    deps:
+    - data/raw/words.txt
+    - src/preparation/words_prepare.py
+    outs:
+    - data/prepare-words/

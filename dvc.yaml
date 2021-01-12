@@ -44,3 +44,12 @@ stages:
     - src/preparation/train_test_split.py
     outs:
     - data/split-dga/
+  merge-training:
+    cmd: python src/preparation/merge_sets.py data/split-alexa/alexa_train.pkl data/split-dga/dga_train.pkl
+      training data/merge-training/
+    deps:
+    - data/split-alexa/alexa_train.pkl
+    - data/split-dga/dga_train.pkl
+    - src/preparation/merge_sets.py
+    outs:
+    - data/merge-training/

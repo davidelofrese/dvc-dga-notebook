@@ -84,3 +84,21 @@ split-dga:
     md5: 12dc4771883829929b9e1ca6b5e405f4.dir
     size: 82020
     nfiles: 2
+merge-training:
+  cmd: python src/preparation/merge_sets.py data/split-alexa/alexa_train.pkl data/split-dga/dga_train.pkl
+    training data/merge-training/
+  deps:
+  - path: data/split-alexa/alexa_train.pkl
+    md5: 4c20ede22a1a7c6f6e9cdbb10532b072
+    size: 20940112
+  - path: data/split-dga/dga_train.pkl
+    md5: 87f4f9f873ae049974ab2f39aeb9cb4f
+    size: 73964
+  - path: src/preparation/merge_sets.py
+    md5: 52cba0f0d2b96f596016b5e529a2034b
+    size: 863
+  outs:
+  - path: data/merge-training/
+    md5: aabd302ad409f42d9a621479735508b4.dir
+    size: 14737227
+    nfiles: 1

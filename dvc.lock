@@ -54,3 +54,18 @@ prepare-words:
     md5: b305b5b29a37211d771f49d183b000d6.dir
     size: 8399364
     nfiles: 1
+split-alexa:
+  cmd: python src/preparation/train_test_split.py data/prepare-alexa/alexa_prepared.pkl
+    alexa data/split-alexa/
+  deps:
+  - path: data/prepare-alexa/alexa_prepared.pkl
+    md5: d076c041988e29152e2c39863fbc670e
+    size: 23269201
+  - path: src/preparation/train_test_split.py
+    md5: f5d11d7d36097c8d648caa363b9531cc
+    size: 1029
+  outs:
+  - path: data/split-alexa/
+    md5: f641d20db7b2fc1e607ce1a4f9d641c7.dir
+    size: 23269987
+    nfiles: 2

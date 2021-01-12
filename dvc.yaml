@@ -28,3 +28,11 @@ stages:
     - src/preparation/words_prepare.py
     outs:
     - data/prepare-words/
+  split-alexa:
+    cmd: python src/preparation/train_test_split.py data/prepare-alexa/alexa_prepared.pkl
+      alexa data/split-alexa/
+    deps:
+    - data/prepare-alexa/alexa_prepared.pkl
+    - src/preparation/train_test_split.py
+    outs:
+    - data/split-alexa/

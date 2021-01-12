@@ -102,3 +102,21 @@ merge-training:
     md5: aabd302ad409f42d9a621479735508b4.dir
     size: 14737227
     nfiles: 1
+merge-test:
+  cmd: python src/preparation/merge_sets.py data/split-alexa/alexa_test.pkl data/split-dga/dga_test.pkl
+    test data/merge-test/
+  deps:
+  - path: data/split-alexa/alexa_test.pkl
+    md5: 590a53692b67eee8fddb7afebbec8e51
+    size: 2329875
+  - path: data/split-dga/dga_test.pkl
+    md5: e70a622979e09212795611792c8722b4
+    size: 8056
+  - path: src/preparation/merge_sets.py
+    md5: 52cba0f0d2b96f596016b5e529a2034b
+    size: 863
+  outs:
+  - path: data/merge-test/
+    md5: f1e99d25b0770b6b79f2f6544211a669.dir
+    size: 1639677
+    nfiles: 1

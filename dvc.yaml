@@ -53,3 +53,12 @@ stages:
     - src/preparation/merge_sets.py
     outs:
     - data/merge-training/
+  merge-test:
+    cmd: python src/preparation/merge_sets.py data/split-alexa/alexa_test.pkl data/split-dga/dga_test.pkl
+      test data/merge-test/
+    deps:
+    - data/split-alexa/alexa_test.pkl
+    - data/split-dga/dga_test.pkl
+    - src/preparation/merge_sets.py
+    outs:
+    - data/merge-test/

@@ -72,7 +72,7 @@ models:
 
 Each stage of the pipeline has been added using the `dvc run` command, specifying the input dependencies, the outputs and the command to execute. Except for the first stage (`extract-alexa`) where the command used is `unzip`, all the other stages execute one of the Python modules extracted from the code in the notebook (as described in the previous paragraph).
 
-In addition to the parameters `-d` and `-o` to track the input dependencies and the output of each stage, two other parameters have been used: `-p` and `--plots`. The first one is used to specify one or more parameters the stage depends on (to allow to re-execution of the stage when the parameters change), the second instead, allow to define a special output produced by the stage, that is a plot metrics file (more on this in the [Plot metrics](#plot-metrics) section).
+In addition to the parameters `-d` and `-o` to track the input dependencies and the output of each stage, two other parameters have been used: `-p` and `--plots`. The first one is used to specify one or more parameters the stage depends on (to allow to re-execution of the stage when the parameters change), the second instead, allow to define a special output produced by the stage, that is a plot metrics file (more on this in the [Plot metrics](#📊-plot-metrics) section).
 
 The outputs of each stage are stored inside the `data` folder where they are organized in multiple sub-folders according to the stage. The structure of the `data` folder is reported below.
 ```console

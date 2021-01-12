@@ -187,13 +187,24 @@ cd dvc-dga-notebook
 
 ### Configuration
 
-Before reproducing the pipeline, it is necessary to create and activate a [Python virtual environment](https://docs.python.org/3/library/venv.html):
+Before reproducing the pipeline, it is necessary to create a [Python virtual environment](https://docs.python.org/3/library/venv.html):
 ```sh
 python -m venv .env
+```
+
+Then, activate it:
+
+- Windows
+```sh
 source .env/Scripts/activate
 ```
 
-Then, install the dependencies listed in the `requirements.txt` file:
+- POSIX
+```sh
+source .env/bin/activate
+```
+
+Next, install the dependencies listed in the `requirements.txt` file:
 ```sh
 pip install -r requirements.txt
 ```

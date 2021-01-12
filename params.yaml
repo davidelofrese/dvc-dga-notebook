@@ -1,0 +1,19 @@
+preparation:
+  seed: 0
+
+features:
+  alexa_vectorization:
+    range_low: 3
+    range_high: 5
+    min_df: 0.0001
+    max_df: 1.0
+    
+  words_vectorization:
+    range_low: 3
+    range_high: 5
+    min_df: 0.00001
+    max_df: 1.0
+
+models:
+  n_estimators: 20
+  seed: 0

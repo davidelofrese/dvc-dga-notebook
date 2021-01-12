@@ -26,3 +26,17 @@ prepare-alexa:
     md5: a300a7f00d99549d84ebb855f13a8a4c.dir
     size: 23269201
     nfiles: 1
+prepare-dga:
+  cmd: python src/preparation/dga_prepare.py data/raw/dga_domains.txt data/prepare-dga/
+  deps:
+  - path: data/raw/dga_domains.txt
+    md5: d26191eb20cbddff6c1dac7049b77558
+    size: 41875
+  - path: src/preparation/dga_prepare.py
+    md5: 78e3bb8846cdacdf68dca394ade0d40a
+    size: 1125
+  outs:
+  - path: data/prepare-dga/
+    md5: e5d233c5cbe290b03d5ea4176e589751.dir
+    size: 81123
+    nfiles: 1

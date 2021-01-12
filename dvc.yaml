@@ -14,3 +14,10 @@ stages:
     - preparation.seed
     outs:
     - data/prepare-alexa/
+  prepare-dga:
+    cmd: python src/preparation/dga_prepare.py data/raw/dga_domains.txt data/prepare-dga/
+    deps:
+    - data/raw/dga_domains.txt
+    - src/preparation/dga_prepare.py
+    outs:
+    - data/prepare-dga/

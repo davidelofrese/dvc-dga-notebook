@@ -155,3 +155,21 @@ build-features:
     md5: 0aa778910d8e1719087eca0cbf5dbe7f.dir
     size: 43632046
     nfiles: 2
+train-model:
+  cmd: python src/models/train_model.py data/build-features/training_set.pkl data/train-model/
+  deps:
+  - path: data/build-features/training_set.pkl
+    md5: c2074fde7ad7713ac7e865d042bb8525
+    size: 39258157
+  - path: src/models/train_model.py
+    md5: 9b78fac605e43aa1711edb4f73a0917f
+    size: 1580
+  params:
+    params.yaml:
+      models.n_estimators: 20
+      models.seed: 0
+  outs:
+  - path: data/train-model/
+    md5: 3db8c64632a3fa7aa525f7223334ea26.dir
+    size: 4045738
+    nfiles: 1

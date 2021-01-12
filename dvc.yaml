@@ -83,3 +83,13 @@ stages:
     - features.words_vectorization.range_low
     outs:
     - data/build-features/
+  train-model:
+    cmd: python src/models/train_model.py data/build-features/training_set.pkl data/train-model/
+    deps:
+    - data/build-features/training_set.pkl
+    - src/models/train_model.py
+    params:
+    - models.n_estimators
+    - models.seed
+    outs:
+    - data/train-model/

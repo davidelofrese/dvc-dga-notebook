@@ -1,0 +1,11 @@
+extract-alexa:
+  cmd: unzip data/raw/alexa_1M.zip -d data/extract-alexa/
+  deps:
+  - path: data/raw/alexa_1M.zip
+    md5: ac6ef564db027f3a84fd30f6e9745299
+    size: 10266213
+  outs:
+  - path: data/extract-alexa/
+    md5: e12e0e03430e729268f8a075f0287aae.dir
+    size: 22991158
+    nfiles: 1

@@ -1,0 +1,7 @@
+stages:
+  extract-alexa:
+    cmd: unzip data/raw/alexa_1M.zip -d data/extract-alexa/
+    deps:
+    - data/raw/alexa_1M.zip
+    outs:
+    - data/extract-alexa/

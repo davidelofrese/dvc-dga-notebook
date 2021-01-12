@@ -173,3 +173,21 @@ train-model:
     md5: 3db8c64632a3fa7aa525f7223334ea26.dir
     size: 4045738
     nfiles: 1
+evaluate:
+  cmd: python src/evaluation/evaluate_model.py data/train-model/trained_model.pkl
+    data/build-features/test_set.pkl data/evaluate/
+  deps:
+  - path: data/build-features/test_set.pkl
+    md5: 775247e16834dca9c3a9ae1663bbd23a
+    size: 4373889
+  - path: data/train-model/trained_model.pkl
+    md5: af9ab83fd5076d1ba38b81595b6d3e66
+    size: 4045738
+  - path: src/evaluation/evaluate_model.py
+    md5: 9ef16d2fddec0afb44e881ae38f9cbdb
+    size: 1074
+  outs:
+  - path: data/evaluate/
+    md5: 848b8b8d4e3afce30523108382db6055.dir
+    size: 1020597
+    nfiles: 1

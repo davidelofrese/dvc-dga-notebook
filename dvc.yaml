@@ -93,3 +93,12 @@ stages:
     - models.seed
     outs:
     - data/train-model/
+  evaluate:
+    cmd: python src/evaluation/evaluate_model.py data/train-model/trained_model.pkl
+      data/build-features/test_set.pkl data/evaluate/
+    deps:
+    - data/build-features/test_set.pkl
+    - data/train-model/trained_model.pkl
+    - src/evaluation/evaluate_model.py
+    plots:
+    - data/evaluate/

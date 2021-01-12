@@ -62,3 +62,24 @@ stages:
     - src/preparation/merge_sets.py
     outs:
     - data/merge-test/
+  build-features:
+    cmd: python src/features/build_features.py data/merge-training/merged_training_set.pkl
+      data/merge-test/merged_test_set.pkl data/prepare-alexa/alexa_prepared.pkl data/prepare-words/words_prepared.pkl
+      data/build-features/
+    deps:
+    - data/merge-test/merged_test_set.pkl
+    - data/merge-training/merged_training_set.pkl
+    - data/prepare-alexa/alexa_prepared.pkl
+    - data/prepare-words/words_prepared.pkl
+    - src/features/build_features.py
+    params:
+    - features.alexa_vectorization.max_df
+    - features.alexa_vectorization.min_df
+    - features.alexa_vectorization.range_high
+    - features.alexa_vectorization.range_low
+    - features.words_vectorization.max_df
+    - features.words_vectorization.min_df
+    - features.words_vectorization.range_high
+    - features.words_vectorization.range_low
+    outs:
+    - data/build-features/

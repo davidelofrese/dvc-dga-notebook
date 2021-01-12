@@ -120,3 +120,38 @@ merge-test:
     md5: f1e99d25b0770b6b79f2f6544211a669.dir
     size: 1639677
     nfiles: 1
+build-features:
+  cmd: python src/features/build_features.py data/merge-training/merged_training_set.pkl
+    data/merge-test/merged_test_set.pkl data/prepare-alexa/alexa_prepared.pkl data/prepare-words/words_prepared.pkl
+    data/build-features/
+  deps:
+  - path: data/merge-test/merged_test_set.pkl
+    md5: 6b476bb50dcb5b7ebb2b8e11cdbbb11a
+    size: 1639677
+  - path: data/merge-training/merged_training_set.pkl
+    md5: f025cac858e46bf1344995785fcab290
+    size: 14737227
+  - path: data/prepare-alexa/alexa_prepared.pkl
+    md5: d076c041988e29152e2c39863fbc670e
+    size: 23269201
+  - path: data/prepare-words/words_prepared.pkl
+    md5: 1a7965f16d2553a435cff9dfb224384c
+    size: 8399364
+  - path: src/features/build_features.py
+    md5: deb7f7d520aacd18c824b1a1a89a72c8
+    size: 4044
+  params:
+    params.yaml:
+      features.alexa_vectorization.max_df: 1.0
+      features.alexa_vectorization.min_df: 0.0001
+      features.alexa_vectorization.range_high: 5
+      features.alexa_vectorization.range_low: 3
+      features.words_vectorization.max_df: 1.0
+      features.words_vectorization.min_df: 1e-05
+      features.words_vectorization.range_high: 5
+      features.words_vectorization.range_low: 3
+  outs:
+  - path: data/build-features/
+    md5: 0aa778910d8e1719087eca0cbf5dbe7f.dir
+    size: 43632046
+    nfiles: 2

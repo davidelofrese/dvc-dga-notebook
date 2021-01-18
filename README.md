@@ -36,13 +36,13 @@ These stages are further divided in sub-stages. For instance, the data preparati
 
 Then, the single script has been divided in several Python modules, each of which contains the code to execute a stage of the pipeline. During this process, it has been tried to preserve as much of the original code as possible, but in some cases it has been necessary to correct some syntactical errors and update/adapt the code to make it work with the current version of the libraries used. Moreover, all the code that just print some strings on the standard output has been removed.
 
-It is also important to mention that some parts of the notebook (e.g., the RandomForestClassifier class) return results based on a pseudo-random number generator. Hence, in contrast with the original notebook, it has been chosen to fix a random seed in order to achieve a deterministic behaviour and output reproducible results.
+It is also important to mention that some parts of the notebook (e.g., the RandomForestClassifier class) return results based on a pseudo-random number generator. Hence, in contrast with the original notebook, it has been chosen to fix a random seed in order to achieve a deterministic behavior and output reproducible results.
 
 The modules extracted from the notebook are in the [`src` folder of this repository](/src) and they are organized in multiple sub-folders according to the main stage that they perform: `preparation`, `feature`, `models` and `evaluation`. Each of the modules take in input a set of arguments, that allow to specify the input files, and produces one or more outputs. Except from the evaluation module, all the other modules output `.pkl` files using the Python library `pickle`.
 
 ### ⚙️ Definition of the parameters
 
-Some of the functions defined in the Python modules have specific parameters and hyperparameters that can be changed to alter the experiment and the output results.
+Some of the functions defined in the Python modules have specific parameters and hyper-parameters that can be changed to alter the experiment and the output results.
 
 In order to track these parameters and to allow the comparison of multiple runs, it has been chosen to add the file `params.yaml`, a YAML file which contains the parameters for the modules organized in a hierarchy. The content of the YAML file is reported below. Notice the three top level keys `preparation`, `features` and `models` which corresponds to some of the previously mentioned stages.
 
@@ -116,8 +116,8 @@ The following table reports an high level description of each stage in the pipel
 |       Name       |                                                                                Description                                                                                |
 |:----------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 |  *extract-alexa* | It extracts the .zip file that contains the Alexa dataset.                                                                                                                |
-|  *prepare-alexa* | It prepares the Alexa dataset removing blanklines, setting the class of the domains, etc.                                                                                 |
-|   *prepare-dga*  | It prepares the DGA domains dataset removing blanklines, setting the class of the domains, etc.                                                                           |
+|  *prepare-alexa* | It prepares the Alexa dataset removing blank lines, setting the class of the domains, etc.                                                                                 |
+|   *prepare-dga*  | It prepares the DGA domains dataset removing blank lines, setting the class of the domains, etc.                                                                           |
 |  *prepare-words* | It prepares the words dataset removing duplicate words, lowering the case, etc.                                                                                           |
 |   *split-alexa*  | It splits the prepared Alexa dataset in training set (90%) and test set (10%).                                                                                            |
 |    *split-dga*   | It splits the prepared DGA dataset in training set (90%) and test set (10%).                                                                                              |
@@ -242,7 +242,7 @@ Before reproducing the pipeline, download the tracked files from the remote stor
 dvc pull
 ```
 
-> ⚠ On the first execution of the pull command, DVC will generate an URL to authorize the access to Google Drive. Therefore, it is required to open the URL, sign into a Google account and grant DVC the necessary permissions. This will produce a verification code needed to complete the connection. Additional information on the autorization process are reported in the [DVC documentation](https://dvc.org/doc/user-guide/setup-google-drive-remote#authorization).
+> ⚠ On the first execution of the pull command, DVC will generate an URL to authorize the access to Google Drive. Therefore, it is required to open the URL, sign into a Google account and grant DVC the necessary permissions. This will produce a verification code needed to complete the connection. Additional information on the authorization process are reported in the [DVC documentation](https://dvc.org/doc/user-guide/setup-google-drive-remote#authorization).
 
 ## Run
 
@@ -276,7 +276,7 @@ dvc repro --force
 
 ### Plot confusion matrix
 
-After the reproduction of the pipeline, it is possibile to generate the confusion matrix based on the output of the evaluation stage with the following command:
+After the reproduction of the pipeline, it is possible to generate the confusion matrix based on the output of the evaluation stage with the following command:
 ```sh
 dvc plots show data/evaluate/classes.csv --template confusion -x pred -y class
 ```
@@ -293,7 +293,7 @@ This command will generate an HTML file (`plots.html`) which can be opened with 
 
 ## Authors
 
-* **[Davide Lofrese](https://github.com/davidelofrese)** - creation of the reproducibile DVC pipeline
+* **[Davide Lofrese](https://github.com/davidelofrese)** - creation of the reproducible DVC pipeline
 * [Brian Wylie](https://github.com/brifordwylie) and [Mike Sconzo](https://github.com/sooshie) - authors of the notebook
 
 ## License

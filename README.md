@@ -109,6 +109,24 @@ $ tree
     └── trained_model.pkl
 ```
 
+#### High level description of the stages
+
+The following table reports an high level description of each stage in the pipeline. To look more in depth at the stages, open the file [dvc.yaml](dvc.yaml) where all the stages that form the pipeline are specified, along with the command, the input dependencies, the outputs, etc.
+
+|       Name       |                                                                                Description                                                                                |
+|:----------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|  *extract-alexa* | It extracts the .zip file that contains the Alexa dataset.                                                                                                                |
+|  *prepare-alexa* | It prepares the Alexa dataset removing blanklines, setting the class of the domains, etc.                                                                                 |
+|   *prepare-dga*  | It prepares the DGA domains dataset removing blanklines, setting the class of the domains, etc.                                                                           |
+|  *prepare-words* | It prepares the words dataset removing duplicate words, lowering the case, etc.                                                                                           |
+|   *split-alexa*  | It splits the prepared Alexa dataset in training set (90%) and test set (10%).                                                                                            |
+|    *split-dga*   | It splits the prepared DGA dataset in training set (90%) and test set (10%).                                                                                              |
+| *merge-training* | It merges the two training sets (Alexa training set and DGA training set) into a single one.                                                                              |
+|   *merge-test*   | It merges the two test sets (Alexa test set and DGA test set) into a single one.                                                                                          |
+| *build-features* | It builds the additional features that will be used to train the model. In particular, it adds the length and the entropy of each domain, and performs the vectorization. |
+|   *train-model*  | It trains a Random Forest classifier model.                                                                                                                               |
+|    *evaluate*    | It evaluates the performances of the trained model using the test set.                                                                                                    |
+
 #### Directed acyclic graph (DAG) of the pipeline
 
 DVC represents the stages of the pipeline through a directed acyclic graph with each of the stages in the pipeline as nodes. The graph for this exercise, generated with the `dvc dag` command, is reported below:

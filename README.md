@@ -175,6 +175,8 @@ Below is reported the confusion matrix generated after the training and the eval
 
 The following instructions explain how to get a copy of the project on the local machine and setup it for development and testing purposes.
 
+The project (and the instructions that follow) has been developed and tested on Windows 10, using Python 3.9.1 and DVC 1.11.8.
+
 > ⚠ These instructions assumes that [Python 3.6+](https://www.python.org/downloads/) and [DVC](https://dvc.org/doc/install) are already installed on the local machine. If they are not, please install them before executing the following commands.
 
 ### Download
@@ -187,7 +189,7 @@ cd dvc-dga-notebook
 
 ### Configuration
 
-Before reproducing the pipeline, it is necessary to create a [Python virtual environment](https://docs.python.org/3/library/venv.html):
+Before reproducing the pipeline, create a [Python virtual environment](https://docs.python.org/3/library/venv.html):
 ```sh
 python -m venv .env
 ```

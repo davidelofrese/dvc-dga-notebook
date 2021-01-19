@@ -274,6 +274,8 @@ Hence, to reproduce the pipeline even if no changes were made, use the `--force`
 dvc repro --force
 ```
 
+Otherwise, change some parameters (in `params.yaml` file) or some dependencies and run the command `dvc repro` (without parameters) to reproduce the pipeline.
+
 ### Plot confusion matrix
 
 After the reproduction of the pipeline, it is possible to generate the confusion matrix based on the output of the evaluation stage with the following command:
